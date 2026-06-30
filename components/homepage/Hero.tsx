@@ -19,8 +19,6 @@ export function Hero() {
           gives you everything you need to stand out.
         </p>
 
-        <p className="text-sm text-accent mt-2 italic opacity-90">Dedicated to Preeti ❤️</p>
-
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center gap-4 mt-4 w-full sm:w-auto">
           <Link

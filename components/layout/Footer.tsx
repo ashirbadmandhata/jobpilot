@@ -9,9 +9,10 @@ export function Footer() {
           <Link href="/" className="flex items-center gap-3" id="footer-logo-compact">
             <Logo compact />
           </Link>
-          <div className="flex flex-col">
+          <div className="flex flex-col gap-1">
             <span className="text-xs text-text-muted hidden sm:inline">© {new Date().getFullYear()}</span>
             <span className="text-xs text-text-muted">Designed &amp; built by <span className="font-semibold hover:text-accent">Ashirbad Mandhata</span></span>
+            <span className="text-xs text-accent">Dedicated to Preeti ❤️</span>
           </div>
         </div>
 
