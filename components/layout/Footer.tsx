@@ -12,7 +12,7 @@ export function Footer() {
           <div className="flex flex-col gap-1">
             <span className="text-xs text-text-muted hidden sm:inline">© {new Date().getFullYear()}</span>
             <span className="text-xs text-text-muted">Designed &amp; built by <span className="font-semibold hover:text-accent">Ashirbad Mandhata</span></span>
-            <span className="text-xs text-accent">Dedicated to Preeti ❤️</span>
+            <span className="text-xs text-accent">Dedicated to Preeti Rani Das ❤️</span>
           </div>
         </div>
 
