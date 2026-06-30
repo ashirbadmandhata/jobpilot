@@ -1,65 +1,101 @@
 import Image from "next/image";
+import Link from "next/link";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
+import { Hero } from "@/components/homepage/Hero";
+import { Features } from "@/components/homepage/Features";
+import { HowItWorks } from "@/components/homepage/HowItWorks";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <div className="flex flex-col min-h-screen bg-background">
+      <Navbar />
+
+      <main className="flex-grow flex flex-col">
+        {/* Top Hero Section */}
+        <Hero />
+
+        {/* Section A: Manage Your Job Search With Ease */}
+        <Features />
+
+        {/* Section B: Apply With More Confidence, Every Time */}
+        <HowItWorks />
+
+        {/* Success Stories Testimonial Section */}
+        <section className="w-full py-20 px-6 bg-surface-secondary border-b border-border flex flex-col items-center justify-center text-center">
+          <div className="max-w-4xl mx-auto flex flex-col items-center gap-6">
+            <span className="text-xs font-bold tracking-wider text-accent uppercase" id="testimonial-section-title">
+              Success Stories
+            </span>
+            <blockquote className="text-xl md:text-2xl font-semibold text-text-primary leading-relaxed max-w-3xl">
+              “I used to spend my evenings copy-pasting resumes. Now I open my dashboard
+              to see interviews waiting. It feels like cheating. Had 3 offers on the table
+              simultaneously.”
+            </blockquote>
+            <div className="flex items-center gap-3 mt-2 text-left">
+              <div className="relative w-10 h-10 rounded-full overflow-hidden border border-border">
+                <Image
+                  src="/images/user-icon.png"
+                  alt="Tom Wilson"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div>
+                <p className="text-sm font-bold text-text-primary">Tom Wilson</p>
+                <p className="text-xs font-medium text-text-secondary">Junior Developer</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Bottom CTA Hero Section */}
+        <section className="relative w-full py-24 px-6 bg-gradient-to-b from-surface to-accent-muted/30 border-b border-border text-center overflow-hidden">
+          {/* Grid Overlay */}
+          <div className="landing-grid absolute inset-0 opacity-[0.08] pointer-events-none" />
+
+          <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center gap-6">
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-text-primary leading-tight">
+              Your next job search can feel <span className="block mt-1 text-accent">a lot less overwhelming</span>
+            </h2>
+            <p className="text-sm md:text-base text-text-secondary max-w-xl font-medium leading-relaxed">
+              Set up your profile, upload your resume, and start finding matches in minutes.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center gap-4 mt-2 w-full sm:w-auto">
+              <Link
+                href="/login"
+                className="landing-button-primary w-full sm:w-auto gap-2 flex items-center"
+                id="bottom-cta-btn-get-started"
+              >
+                Get Started
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2.5"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </Link>
+              <Link
+                href="/login"
+                className="landing-button-secondary w-full sm:w-auto bg-surface"
+                id="bottom-cta-btn-find-match"
+              >
+                Find Your First Match
+              </Link>
+            </div>
+          </div>
+        </section>
       </main>
+
+      <Footer />
     </div>
   );
 }
